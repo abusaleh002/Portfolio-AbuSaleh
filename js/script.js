@@ -1,16 +1,19 @@
-// This script dynamically loads all components and applies animations/background
+// ===============================
+// Abu Saleh Portfolio - script.js
+// ===============================
 
-// Function: fetch and load each HTML component file
+// Function to dynamically load each HTML component into index.html
 async function loadComponent(id, file) {
-  // Fetch() gets the HTML text content of each section (header, hero, etc.)
-  const res = await fetch(`components/${file}`);
-  // Converts the response to plain HTML text
-  const html = await res.text();
-  // Adds the section content to the #app div
-  document.getElementById("app").innerHTML += html;
+  try {
+    const res = await fetch(`components/${file}`); // Fetch the HTML file
+    const html = await res.text(); // Convert response to text
+    document.getElementById("app").innerHTML += html; // Append to #app container
+  } catch (err) {
+    console.error(`Error loading ${file}:`, err);
+  }
 }
 
-// Array containing all section filenames to load in order
+// List of component files to load in order
 const sections = [
   "header.html",
   "hero.html",
@@ -18,29 +21,66 @@ const sections = [
   "skills.html",
   "about.html",
   "contact.html",
-  "footer.html"
+  "footer.html",
 ];
 
-// Loop through each section and load it
-sections.forEach(file => loadComponent("app", file));
+// Load all components when page starts
+sections.forEach((file) => loadComponent("app", file));
 
-// Once everything is loaded into the page...
+// Run scripts after everything loads
 window.onload = function () {
-  // Wait half a second for all HTML sections to load
+  // Give components time to render
   setTimeout(() => {
-    // Replace icon placeholders with actual Feather icons
+    // Initialize Feather Icons
     feather.replace();
 
-    // Initialize Vanta.NET animated background
-    VANTA.NET({
-      el: "#vanta-background",   // The target div
-      mouseControls: true,       // Allows background to react to mouse
-      touchControls: true,       // Allows on mobile
-      color: 0x6366f1,           // Line color (indigo)
-      backgroundColor: 0xf8fafc, // Page background color
-      points: 12.00,             // Number of points
-      maxDistance: 22.00,        // Connection distance between points
-      spacing: 18.00             // Distance between points
+    // Initialize Vanta.js background animation
+    if (typeof VANTA !== "undefined") {
+      VANTA.NET({
+        el: "#vanta-background",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x6366f1, // Indigo color for lines
+        backgroundColor: 0xf8fafc, // Light gray background
+        points: 12.0,
+        maxDistance: 22.0,
+        spacing: 18.0,
+      });
+    }
+
+    // ===============================
+    // 🔍 PROJECT FILTER FUNCTIONALITY
+    // ===============================
+    const buttons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".project-card");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const category = button.dataset.category;
+
+        // Reset all buttons
+        buttons.forEach((btn) =>
+          btn.classList.remove("bg-indigo-600", "text-white")
+        );
+
+        // Highlight clicked button
+        button.classList.add("bg-indigo-600", "text-white");
+
+        // Show/Hide project cards
+        cards.forEach((card) => {
+          const cardCategory = card.dataset.category;
+          if (category === "all" || cardCategory === category) {
+            card.style.display = "block"; // show
+          } else {
+            card.style.display = "none"; // hide
+          }
+        });
+      });
     });
   }, 500);
 };
