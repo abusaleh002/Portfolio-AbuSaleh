@@ -19,6 +19,7 @@ const sections = [
   "hero.html",
   "projects.html",
   "skills.html",
+  "education-certifications.html",
   "about.html",
   "contact.html",
   "footer.html",
