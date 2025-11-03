@@ -3,33 +3,90 @@ import Image from "next/image";
 export default function Certifications() {
   const certs = [
     {
-      name: "IBM Data Science Professional Certificate",
-      org: "Coursera / IBM",
-      date: "2024",
-      link: "https://www.coursera.org/professional-certificates/ibm-data-science",
-      image: "/images/ibm-ds.png",
-    },
-    {
       name: "Google Data Analytics Professional Certificate",
-      org: "Google / Coursera",
+      org: "Coursera / Google",
       date: "2024",
-      link: "https://www.coursera.org/professional-certificates/google-data-analytics",
-      image: "/images/google-da.png",
+      link: "https://www.coursera.org/account/accomplishments/verify/JEV26H41IGFH",
+      image: "/images/Google_Data_Analytics_Professiona_ Certificate.png",
     },
     {
-      name: "Microsoft Power BI Data Analyst (PL-300)",
-      org: "Microsoft",
+      name: "Microsoft Azure AI Fundamentals Workshop",
+      org: "ScholarHat / Microsoft",
       date: "2024",
-      link: "https://learn.microsoft.com/en-us/certifications/power-bi-data-analyst-associate/",
-      image: "/images/microsoft-pl300.png",
+      link: "https://www.scholarhat.com/certificate/verify",
+      image: "/images/Microsoft_Azure_AI_Fundamentals_Workshop.png",
     },
     {
-      name: "AWS Certified Machine Learning – Specialty (in progress)",
+      name: "Academy Accreditation - Generative AI Fundamentals",
+      org: "Databicks",
+      date: "2024",
+      link: "https://credentials.databricks.com/d320e471-9f37-4a1d-8aad-105992629ba5#acc.GKBhx8cg",
+      image: "/images/Databricks_Academy_Accreditation _ Generative_AI_Fundamentals.png",
+    },
+
+    {
+      name: "Databricks Fundamentals Accreditation",
+      org: "Databicks",
+      date: "2024",
+      link: "https://credentials.databricks.com/d320e471-9f37-4a1d-8aad-105992629ba5#acc.GKBhx8cg",
+      image: "/images/Databricks_Fundamentals_Accreditation.png",
+    },
+
+
+     {
+      name: "Databricks for Data Engineering",
+      org: "Databicks",
+      date: "2024",
+      link: "https://customer-academy.databricks.com/learn/courses/1511/get-started-with-databricks-for-data-engineering/sessions/9759/get-started-with-databricks-for-data-engineering-class-58021-sgt-singapore-sep15-sep15-public?hash=b63f17964efe0feca6b30a4f6de9602f4f1390bf&generated_by=1211458",
+      image: "/images/Databricks_for_Data_Engineering.png",
+    },
+
+
+    {
+      name: "Python for Data Visualization",
+      org: "LinkedIn",
+      date: "2024",
+      link: "https://www.linkedin.com/learning/certificates/671418ea775fc92a9fe43e299210c1a9819c2e22d004fd31b9b710a8ffc8cc43",
+      image: "/images/LinkedIn_Python_for_Data_Visualization.png",
+    },
+
+
+     {
+      name: "Data Science and Analytics Career Paths and Certifications: First Steps",
+      org: "LinkedIn",
+      date: "2024",
+      link: "https://www.linkedin.com/learning/certificates/41cab8ae629a62fa214fd4ef80c1dcba217ba4b0b2e13db5d180d11914b88757",
+      image: "/images/Data_Science & Analytics_Career_Paths & Certifications-First Steps.png",
+    },
+
+
+    {
+      name: "Python: Working with Predictive Analytics (2019)",
+      org: "LinkedIn",
+      date: "2024",
+      link: "https://www.linkedin.com/learning/certificates/f0067db11934e0d3b0ba23192b9579f528f4ad55cf3fcdf04bdae2fe58138aa8",
+      image: "/images/Python-Working with Predictive Analytics (2019).png",
+    },
+
+
+
+    {
+      name: "AWS Solutions Architect (in progress)",
       org: "Amazon Web Services",
       date: "Ongoing",
-      link: "https://aws.amazon.com/certification/certified-machine-learning-specialty/",
-      image: "/images/aws-ml.png",
+      //link: "https://aws.amazon.com/certification/certified-machine-learning-specialty/",
+      image: "/images/AWS_Certified_Solutions_Architect.png",
     },
+
+
+    {
+      name: "Microsoft Azure AI Fundamentals (in progress)",
+      org: "Microsoft",
+      date: "Ongoing",
+      link: "https://aws.amazon.com/certification/certified-machine-learning-specialty/",
+      image: "/images/Microsoft_Azure_AI_Fundamentals.png",
+    },
+
   ];
 
   return (
