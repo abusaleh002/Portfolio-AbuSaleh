@@ -5,7 +5,7 @@ export default function Showcase() {
   const visuals = [
     { src: 'forecasting.png', title: 'Forecast: LSTM/GRU + XGBoost' },
     { src: 'powerbi.png', title: 'Retail KPI Dashboard (Power BI)' },
-    { src: 'd3-dashboard.png', title: 'Interactive D3 Visuals' },
+    { src: 'Interactive_Data_Visualization_(D3.js).png', title: 'Interactive D3 Visuals' },
   ];
 
   return (
